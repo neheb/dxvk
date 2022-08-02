@@ -60,14 +60,10 @@ namespace dxvk {
   }
 
 
-  DxvkBindingList::DxvkBindingList() {
-
-  }
+  DxvkBindingList::DxvkBindingList() = default;
 
 
-  DxvkBindingList::~DxvkBindingList() {
-
-  }
+  DxvkBindingList::~DxvkBindingList() = default;
 
 
   void DxvkBindingList::addBinding(const DxvkBindingInfo& binding) {
@@ -121,9 +117,7 @@ namespace dxvk {
   }
 
 
-  DxvkBindingSetLayoutKey::~DxvkBindingSetLayoutKey() {
-
-  }
+  DxvkBindingSetLayoutKey::~DxvkBindingSetLayoutKey() = default;
 
 
   bool DxvkBindingSetLayoutKey::eq(const DxvkBindingSetLayoutKey& other) const {
@@ -214,9 +208,7 @@ namespace dxvk {
   }
 
 
-  DxvkBindingLayout::~DxvkBindingLayout() {
-
-  }
+  DxvkBindingLayout::~DxvkBindingLayout() = default;
 
 
   uint32_t DxvkBindingLayout::getSetMask() const {

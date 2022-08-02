@@ -23,8 +23,6 @@ namespace dxvk {
   }
   
   
-  DxbcHeader::~DxbcHeader() {
-    
-  }
+  DxbcHeader::~DxbcHeader() = default;
   
 }

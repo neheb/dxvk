@@ -13,7 +13,7 @@ namespace dxvk {
 
 
   D3D9GlobalAnnotationList::~D3D9GlobalAnnotationList()
-  {}
+  = default;
 
 
   void D3D9GlobalAnnotationList::RegisterAnnotator(IDXVKUserDefinedAnnotation* annotation) {

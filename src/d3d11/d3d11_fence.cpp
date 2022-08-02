@@ -27,9 +27,7 @@ namespace dxvk {
   }
 
 
-  D3D11Fence::~D3D11Fence() {
-
-  }
+  D3D11Fence::~D3D11Fence() = default;
 
 
   HRESULT STDMETHODCALLTYPE D3D11Fence::QueryInterface(

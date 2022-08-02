@@ -64,9 +64,7 @@ namespace dxvk {
   }
   
   
-  DxbcCompiler::~DxbcCompiler() {
-    
-  }
+  DxbcCompiler::~DxbcCompiler() = default;
   
   
   void DxbcCompiler::processInstruction(const DxbcShaderInstruction& ins) {

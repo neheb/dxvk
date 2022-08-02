@@ -2840,9 +2840,7 @@ namespace dxvk {
   }
 
 
-  D3D11VideoDevice::~D3D11VideoDevice() {
-
-  }
+  D3D11VideoDevice::~D3D11VideoDevice() = default;
 
 
   ULONG STDMETHODCALLTYPE D3D11VideoDevice::AddRef() {
@@ -3162,9 +3160,7 @@ namespace dxvk {
   }
   
   
-  D3D11DXGIDevice::~D3D11DXGIDevice() {
-    
-  }
+  D3D11DXGIDevice::~D3D11DXGIDevice() = default;
   
   
   HRESULT STDMETHODCALLTYPE D3D11DXGIDevice::QueryInterface(REFIID riid, void** ppvObject) {

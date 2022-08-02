@@ -35,9 +35,7 @@ namespace dxvk {
   }
   
   
-  DxbcModule::~DxbcModule() {
-    
-  }
+  DxbcModule::~DxbcModule() = default;
   
   
   Rc<DxvkShader> DxbcModule::compile(

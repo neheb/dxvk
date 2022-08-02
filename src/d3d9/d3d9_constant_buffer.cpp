@@ -3,9 +3,7 @@
 
 namespace dxvk {
 
-  D3D9ConstantBuffer::D3D9ConstantBuffer() {
-
-  }
+  D3D9ConstantBuffer::D3D9ConstantBuffer() = default;
 
 
   D3D9ConstantBuffer::D3D9ConstantBuffer(
@@ -34,9 +32,7 @@ namespace dxvk {
   }
 
 
-  D3D9ConstantBuffer::~D3D9ConstantBuffer() {
-
-  }
+  D3D9ConstantBuffer::~D3D9ConstantBuffer() = default;
 
 
   void* D3D9ConstantBuffer::Alloc(VkDeviceSize size) {

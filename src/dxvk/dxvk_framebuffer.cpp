@@ -2,9 +2,7 @@
 
 namespace dxvk {
   
-  DxvkFramebufferInfo::DxvkFramebufferInfo() {
-
-  }
+  DxvkFramebufferInfo::DxvkFramebufferInfo() = default;
 
 
   DxvkFramebufferInfo::DxvkFramebufferInfo(
@@ -27,9 +25,7 @@ namespace dxvk {
   }
 
 
-  DxvkFramebufferInfo::~DxvkFramebufferInfo() {
-
-  }
+  DxvkFramebufferInfo::~DxvkFramebufferInfo() = default;
 
 
   int32_t DxvkFramebufferInfo::findAttachment(const Rc<DxvkImageView>& view) const {

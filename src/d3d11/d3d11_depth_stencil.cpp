@@ -17,9 +17,7 @@ namespace dxvk {
   }
   
   
-  D3D11DepthStencilState::~D3D11DepthStencilState() {
-    
-  }
+  D3D11DepthStencilState::~D3D11DepthStencilState() = default;
 
 
   HRESULT STDMETHODCALLTYPE D3D11DepthStencilState::QueryInterface(REFIID riid, void** ppvObject) {

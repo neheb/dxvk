@@ -47,9 +47,7 @@ namespace dxvk {
   }
   
   
-  D3D11RasterizerState::~D3D11RasterizerState() {
-    
-  }
+  D3D11RasterizerState::~D3D11RasterizerState() = default;
 
 
   HRESULT STDMETHODCALLTYPE D3D11RasterizerState::QueryInterface(REFIID riid, void** ppvObject) {

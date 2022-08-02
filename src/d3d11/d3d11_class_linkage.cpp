@@ -10,9 +10,7 @@ namespace dxvk {
   }
   
   
-  D3D11ClassLinkage::~D3D11ClassLinkage() {
-    
-  }
+  D3D11ClassLinkage::~D3D11ClassLinkage() = default;
   
   
   HRESULT STDMETHODCALLTYPE D3D11ClassLinkage::QueryInterface(REFIID riid, void** ppvObject) {

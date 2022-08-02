@@ -15,9 +15,7 @@ namespace dxvk {
     m_device    (pDevice) { }
   
   
-  D3D11VkInterop::~D3D11VkInterop() {
-    
-  }
+  D3D11VkInterop::~D3D11VkInterop() = default;
   
   
   ULONG STDMETHODCALLTYPE D3D11VkInterop::AddRef() {

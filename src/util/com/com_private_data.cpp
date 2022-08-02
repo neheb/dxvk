@@ -6,7 +6,7 @@
 
 namespace dxvk {
   
-  ComPrivateDataEntry::ComPrivateDataEntry() { }
+  ComPrivateDataEntry::ComPrivateDataEntry() = default;
   ComPrivateDataEntry::ComPrivateDataEntry(
           REFGUID   guid,
           UINT      size,

@@ -18,9 +18,7 @@ namespace dxvk {
   }
 
 
-  D3D11VideoProcessorEnumerator::~D3D11VideoProcessorEnumerator() {
-
-  }
+  D3D11VideoProcessorEnumerator::~D3D11VideoProcessorEnumerator() = default;
 
 
   HRESULT STDMETHODCALLTYPE D3D11VideoProcessorEnumerator::QueryInterface(
@@ -98,9 +96,7 @@ namespace dxvk {
   }
 
 
-  D3D11VideoProcessor::~D3D11VideoProcessor() {
-
-  }
+  D3D11VideoProcessor::~D3D11VideoProcessor() = default;
 
 
   HRESULT STDMETHODCALLTYPE D3D11VideoProcessor::QueryInterface(
@@ -197,9 +193,7 @@ namespace dxvk {
   }
 
 
-  D3D11VideoProcessorInputView::~D3D11VideoProcessorInputView() {
-
-  }
+  D3D11VideoProcessorInputView::~D3D11VideoProcessorInputView() = default;
 
 
   bool D3D11VideoProcessorInputView::IsYCbCrFormat(DXGI_FORMAT Format) {
@@ -287,9 +281,7 @@ namespace dxvk {
   }
 
 
-  D3D11VideoProcessorOutputView::~D3D11VideoProcessorOutputView() {
-
-  }
+  D3D11VideoProcessorOutputView::~D3D11VideoProcessorOutputView() = default;
 
 
   HRESULT STDMETHODCALLTYPE D3D11VideoProcessorOutputView::QueryInterface(
@@ -377,9 +369,7 @@ namespace dxvk {
   }
 
 
-  D3D11VideoContext::~D3D11VideoContext() {
-
-  }
+  D3D11VideoContext::~D3D11VideoContext() = default;
 
 
   ULONG STDMETHODCALLTYPE D3D11VideoContext::AddRef() {

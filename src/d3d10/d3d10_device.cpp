@@ -12,9 +12,7 @@ namespace dxvk {
   }
 
   
-  D3D10Device::~D3D10Device() {
-
-  }
+  D3D10Device::~D3D10Device() = default;
   
 
   HRESULT STDMETHODCALLTYPE D3D10Device::QueryInterface(

@@ -141,9 +141,7 @@ namespace dxvk {
   }
 
 
-  DxvkShader::~DxvkShader() {
-    
-  }
+  DxvkShader::~DxvkShader() = default;
   
   
   SpirvCodeBuffer DxvkShader::getCode(

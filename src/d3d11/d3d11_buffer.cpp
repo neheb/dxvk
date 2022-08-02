@@ -79,9 +79,7 @@ namespace dxvk {
   }
   
   
-  D3D11Buffer::~D3D11Buffer() {
-
-  }
+  D3D11Buffer::~D3D11Buffer() = default;
   
   
   HRESULT STDMETHODCALLTYPE D3D11Buffer::QueryInterface(REFIID riid, void** ppvObject) {

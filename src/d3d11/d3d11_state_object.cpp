@@ -9,9 +9,7 @@ namespace dxvk {
   }
 
   
-  D3D11DeviceContextState::~D3D11DeviceContextState() {
-
-  }
+  D3D11DeviceContextState::~D3D11DeviceContextState() = default;
 
 
   HRESULT STDMETHODCALLTYPE D3D11DeviceContextState::QueryInterface(

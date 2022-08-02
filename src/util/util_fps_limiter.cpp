@@ -23,9 +23,7 @@ namespace dxvk {
   }
 
 
-  FpsLimiter::~FpsLimiter() {
-
-  }
+  FpsLimiter::~FpsLimiter() = default;
 
 
   void FpsLimiter::setTargetFrameRate(double frameRate) {

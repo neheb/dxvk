@@ -2,8 +2,8 @@
 
 namespace dxvk {
   
-  DxvkLifetimeTracker:: DxvkLifetimeTracker() { }
-  DxvkLifetimeTracker::~DxvkLifetimeTracker() { }
+  DxvkLifetimeTracker:: DxvkLifetimeTracker() = default;
+  DxvkLifetimeTracker::~DxvkLifetimeTracker() = default;
   
   
   void DxvkLifetimeTracker::notify() {

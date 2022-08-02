@@ -4,9 +4,7 @@
 
 namespace dxvk {
   
-  DxbcOptions::DxbcOptions() {
-
-  }
+  DxbcOptions::DxbcOptions() = default;
 
 
   DxbcOptions::DxbcOptions(const Rc<DxvkDevice>& device, const D3D11Options& options) {

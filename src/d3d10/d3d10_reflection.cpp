@@ -9,9 +9,7 @@ namespace dxvk {
   }
 
   
-  D3D10ShaderReflectionType::~D3D10ShaderReflectionType() {
-
-  }
+  D3D10ShaderReflectionType::~D3D10ShaderReflectionType() = default;
 
 
   HRESULT STDMETHODCALLTYPE D3D10ShaderReflectionType::GetDesc(
@@ -73,9 +71,7 @@ namespace dxvk {
   }
 
 
-  D3D10ShaderReflectionVariable::~D3D10ShaderReflectionVariable() {
-
-  }
+  D3D10ShaderReflectionVariable::~D3D10ShaderReflectionVariable() = default;
 
 
   HRESULT STDMETHODCALLTYPE D3D10ShaderReflectionVariable::GetDesc(
@@ -107,9 +103,7 @@ namespace dxvk {
   }
 
   
-  D3D10ShaderReflectionConstantBuffer::~D3D10ShaderReflectionConstantBuffer() {
-
-  }
+  D3D10ShaderReflectionConstantBuffer::~D3D10ShaderReflectionConstantBuffer() = default;
 
 
   HRESULT STDMETHODCALLTYPE D3D10ShaderReflectionConstantBuffer::GetDesc(
@@ -165,9 +159,7 @@ namespace dxvk {
   }
 
 
-  D3D10ShaderReflection::~D3D10ShaderReflection() {
-
-  }
+  D3D10ShaderReflection::~D3D10ShaderReflection() = default;
 
 
   HRESULT STDMETHODCALLTYPE D3D10ShaderReflection::QueryInterface(

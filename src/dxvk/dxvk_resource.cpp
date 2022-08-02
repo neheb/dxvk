@@ -2,8 +2,6 @@
 
 namespace dxvk {
   
-  DxvkResource::~DxvkResource() {
-    
-  }
+  DxvkResource::~DxvkResource() = default;
   
 }

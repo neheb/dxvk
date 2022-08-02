@@ -4,7 +4,7 @@
 
 namespace dxvk {
   
-  DxvkDataBuffer:: DxvkDataBuffer() { }
+  DxvkDataBuffer:: DxvkDataBuffer() = default;
   DxvkDataBuffer::DxvkDataBuffer(size_t size)
   : m_data(new char[size]), m_size(size) { }
   

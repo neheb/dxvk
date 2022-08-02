@@ -32,9 +32,7 @@ namespace dxvk {
   }
 
 
-  DxvkBarrierSet::~DxvkBarrierSet() {
-
-  }
+  DxvkBarrierSet::~DxvkBarrierSet() = default;
 
   
   void DxvkBarrierSet::accessMemory(

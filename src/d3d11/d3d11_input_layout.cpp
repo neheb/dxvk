@@ -22,9 +22,7 @@ namespace dxvk {
   }
   
   
-  D3D11InputLayout::~D3D11InputLayout() {
-    
-  }
+  D3D11InputLayout::~D3D11InputLayout() = default;
   
   
   HRESULT STDMETHODCALLTYPE D3D11InputLayout::QueryInterface(REFIID riid, void** ppvObject) {

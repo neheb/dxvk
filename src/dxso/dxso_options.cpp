@@ -4,7 +4,7 @@
 
 namespace dxvk {
 
-  DxsoOptions::DxsoOptions() {}
+  DxsoOptions::DxsoOptions() = default;
 
   DxsoOptions::DxsoOptions(D3D9DeviceEx* pDevice, const D3D9Options& options) {
     const Rc<DxvkDevice> device = pDevice->GetDXVKDevice();

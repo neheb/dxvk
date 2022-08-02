@@ -9,9 +9,7 @@
 
 namespace dxvk {
 
-  DxvkGraphicsPipelineVertexInputState::DxvkGraphicsPipelineVertexInputState() {
-    
-  }
+  DxvkGraphicsPipelineVertexInputState::DxvkGraphicsPipelineVertexInputState() = default;
 
 
   DxvkGraphicsPipelineVertexInputState::DxvkGraphicsPipelineVertexInputState(
@@ -201,9 +199,7 @@ namespace dxvk {
   }
 
 
-  DxvkGraphicsPipelineFragmentOutputState::DxvkGraphicsPipelineFragmentOutputState() {
-
-  }
+  DxvkGraphicsPipelineFragmentOutputState::DxvkGraphicsPipelineFragmentOutputState() = default;
 
 
   DxvkGraphicsPipelineFragmentOutputState::DxvkGraphicsPipelineFragmentOutputState(
@@ -424,9 +420,7 @@ namespace dxvk {
   }
 
 
-  DxvkGraphicsPipelinePreRasterizationState::DxvkGraphicsPipelinePreRasterizationState() {
-    
-  }
+  DxvkGraphicsPipelinePreRasterizationState::DxvkGraphicsPipelinePreRasterizationState() = default;
 
 
   DxvkGraphicsPipelinePreRasterizationState::DxvkGraphicsPipelinePreRasterizationState(
@@ -518,9 +512,7 @@ namespace dxvk {
   }
 
 
-  DxvkGraphicsPipelineFragmentShaderState::DxvkGraphicsPipelineFragmentShaderState() {
-
-  }
+  DxvkGraphicsPipelineFragmentShaderState::DxvkGraphicsPipelineFragmentShaderState() = default;
 
 
   DxvkGraphicsPipelineFragmentShaderState::DxvkGraphicsPipelineFragmentShaderState(
@@ -600,9 +592,7 @@ namespace dxvk {
   }
 
 
-  DxvkGraphicsPipelineDynamicState::DxvkGraphicsPipelineDynamicState() {
-    
-  }
+  DxvkGraphicsPipelineDynamicState::DxvkGraphicsPipelineDynamicState() = default;
 
 
   DxvkGraphicsPipelineDynamicState::DxvkGraphicsPipelineDynamicState(
@@ -658,9 +648,7 @@ namespace dxvk {
   }
 
 
-  DxvkGraphicsPipelineShaderState::DxvkGraphicsPipelineShaderState() {
-
-  }
+  DxvkGraphicsPipelineShaderState::DxvkGraphicsPipelineShaderState() = default;
 
 
   DxvkGraphicsPipelineShaderState::DxvkGraphicsPipelineShaderState(
@@ -764,9 +752,7 @@ namespace dxvk {
   }
 
 
-  DxvkPipelineSpecConstantState::DxvkPipelineSpecConstantState() {
-
-  }
+  DxvkPipelineSpecConstantState::DxvkPipelineSpecConstantState() = default;
 
 
   DxvkPipelineSpecConstantState::DxvkPipelineSpecConstantState(

@@ -3,8 +3,8 @@
 
 namespace dxvk {
   
-  D3D11CommonShader:: D3D11CommonShader() { }
-  D3D11CommonShader::~D3D11CommonShader() { }
+  D3D11CommonShader:: D3D11CommonShader() = default;
+  D3D11CommonShader::~D3D11CommonShader() = default;
   
   
   D3D11CommonShader::D3D11CommonShader(
@@ -76,8 +76,8 @@ namespace dxvk {
   }
 
   
-  D3D11ShaderModuleSet:: D3D11ShaderModuleSet() { }
-  D3D11ShaderModuleSet::~D3D11ShaderModuleSet() { }
+  D3D11ShaderModuleSet:: D3D11ShaderModuleSet() = default;
+  D3D11ShaderModuleSet::~D3D11ShaderModuleSet() = default;
   
   
   HRESULT D3D11ShaderModuleSet::GetShaderModule(

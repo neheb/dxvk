@@ -13,9 +13,7 @@ namespace dxvk {
   }
 
 
-  D3D10Multithread::~D3D10Multithread() {
-
-  }
+  D3D10Multithread::~D3D10Multithread() = default;
 
 
   ULONG STDMETHODCALLTYPE D3D10Multithread::AddRef() {

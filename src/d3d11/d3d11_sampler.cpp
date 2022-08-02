@@ -60,9 +60,7 @@ namespace dxvk {
   }
   
   
-  D3D11SamplerState::~D3D11SamplerState() {
-    
-  }
+  D3D11SamplerState::~D3D11SamplerState() = default;
 
 
   HRESULT STDMETHODCALLTYPE D3D11SamplerState::QueryInterface(REFIID riid, void** ppvObject) {

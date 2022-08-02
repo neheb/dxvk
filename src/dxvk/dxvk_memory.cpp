@@ -5,7 +5,7 @@
 
 namespace dxvk {
   
-  DxvkMemory::DxvkMemory() { }
+  DxvkMemory::DxvkMemory() = default;
   DxvkMemory::DxvkMemory(
           DxvkMemoryAllocator*  alloc,
           DxvkMemoryChunk*      chunk,
@@ -229,9 +229,7 @@ namespace dxvk {
   }
   
   
-  DxvkMemoryAllocator::~DxvkMemoryAllocator() {
-    
-  }
+  DxvkMemoryAllocator::~DxvkMemoryAllocator() = default;
   
   
   DxvkMemory DxvkMemoryAllocator::alloc(

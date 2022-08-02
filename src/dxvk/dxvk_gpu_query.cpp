@@ -227,9 +227,7 @@ namespace dxvk {
   }
   
 
-  DxvkGpuQueryPool::~DxvkGpuQueryPool() {
-
-  }
+  DxvkGpuQueryPool::~DxvkGpuQueryPool() = default;
 
   
   DxvkGpuQueryHandle DxvkGpuQueryPool::allocQuery(VkQueryType type) {
@@ -257,9 +255,7 @@ namespace dxvk {
   }
 
   
-  DxvkGpuQueryManager::~DxvkGpuQueryManager() {
-
-  }
+  DxvkGpuQueryManager::~DxvkGpuQueryManager() = default;
 
 
   void DxvkGpuQueryManager::enableQuery(
@@ -398,8 +394,8 @@ namespace dxvk {
 
 
 
-  DxvkGpuQueryTracker::DxvkGpuQueryTracker() { }
-  DxvkGpuQueryTracker::~DxvkGpuQueryTracker() { }
+  DxvkGpuQueryTracker::DxvkGpuQueryTracker() = default;
+  DxvkGpuQueryTracker::~DxvkGpuQueryTracker() = default;
   
 
   void DxvkGpuQueryTracker::trackQuery(DxvkGpuQueryHandle handle) {

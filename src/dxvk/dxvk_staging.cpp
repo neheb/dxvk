@@ -11,9 +11,7 @@ namespace dxvk {
   }
 
 
-  DxvkStagingBuffer::~DxvkStagingBuffer() {
-
-  }
+  DxvkStagingBuffer::~DxvkStagingBuffer() = default;
 
 
   DxvkBufferSlice DxvkStagingBuffer::alloc(VkDeviceSize align, VkDeviceSize size) {

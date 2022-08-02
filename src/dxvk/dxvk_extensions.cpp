@@ -2,8 +2,8 @@
 
 namespace dxvk {
   
-  DxvkNameSet::DxvkNameSet() { }
-  DxvkNameSet::~DxvkNameSet() { }
+  DxvkNameSet::DxvkNameSet() = default;
+  DxvkNameSet::~DxvkNameSet() = default;
 
 
   void DxvkNameSet::add(const char* pName) {

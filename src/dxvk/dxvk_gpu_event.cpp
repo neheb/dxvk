@@ -81,8 +81,8 @@ namespace dxvk {
 
 
 
-  DxvkGpuEventTracker::DxvkGpuEventTracker() { }
-  DxvkGpuEventTracker::~DxvkGpuEventTracker() { }
+  DxvkGpuEventTracker::DxvkGpuEventTracker() = default;
+  DxvkGpuEventTracker::~DxvkGpuEventTracker() = default;
 
 
   void DxvkGpuEventTracker::trackEvent(DxvkGpuEventHandle handle) {

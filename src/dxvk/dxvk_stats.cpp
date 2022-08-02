@@ -7,9 +7,7 @@ namespace dxvk {
   }
   
   
-  DxvkStatCounters::~DxvkStatCounters() {
-    
-  }
+  DxvkStatCounters::~DxvkStatCounters() = default;
   
   
   DxvkStatCounters DxvkStatCounters::diff(const DxvkStatCounters& other) const {

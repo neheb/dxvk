@@ -2,9 +2,7 @@
 
 namespace dxvk {
   
-  DxvkCsChunk::DxvkCsChunk() {
-    
-  }
+  DxvkCsChunk::DxvkCsChunk() = default;
   
   
   DxvkCsChunk::~DxvkCsChunk() {
@@ -57,9 +55,7 @@ namespace dxvk {
   }
   
   
-  DxvkCsChunkPool::DxvkCsChunkPool() {
-    
-  }
+  DxvkCsChunkPool::DxvkCsChunkPool() = default;
   
   
   DxvkCsChunkPool::~DxvkCsChunkPool() {

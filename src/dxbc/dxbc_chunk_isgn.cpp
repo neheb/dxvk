@@ -33,9 +33,7 @@ namespace dxvk {
   }
   
   
-  DxbcIsgn::~DxbcIsgn() {
-    
-  }
+  DxbcIsgn::~DxbcIsgn() = default;
   
   
   const DxbcSgnEntry* DxbcIsgn::findByRegister(uint32_t registerId) const {

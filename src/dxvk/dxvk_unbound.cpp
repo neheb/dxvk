@@ -9,9 +9,7 @@ namespace dxvk {
   }
   
   
-  DxvkUnboundResources::~DxvkUnboundResources() {
-    
-  }
+  DxvkUnboundResources::~DxvkUnboundResources() = default;
   
   
   Rc<DxvkSampler> DxvkUnboundResources::createSampler(DxvkDevice* dev) {

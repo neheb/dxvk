@@ -62,9 +62,7 @@ namespace dxvk {
   }
   
   
-  DxvkContext::~DxvkContext() {
-    
-  }
+  DxvkContext::~DxvkContext() = default;
   
   
   void DxvkContext::beginRecording(const Rc<DxvkCommandList>& cmdList) {

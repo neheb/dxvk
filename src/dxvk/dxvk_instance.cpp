@@ -47,9 +47,7 @@ namespace dxvk {
   }
   
   
-  DxvkInstance::~DxvkInstance() {
-    
-  }
+  DxvkInstance::~DxvkInstance() = default;
   
   
   Rc<DxvkAdapter> DxvkInstance::enumAdapters(uint32_t index) const {

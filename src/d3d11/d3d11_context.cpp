@@ -27,9 +27,7 @@ namespace dxvk {
   }
   
   
-  D3D11DeviceContext::~D3D11DeviceContext() {
-    
-  }
+  D3D11DeviceContext::~D3D11DeviceContext() = default;
   
   
   HRESULT STDMETHODCALLTYPE D3D11DeviceContext::QueryInterface(REFIID riid, void** ppvObject) {

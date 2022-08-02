@@ -863,9 +863,7 @@ namespace dxvk {
   }
   
   
-  DXGIVkFormatTable::~DXGIVkFormatTable() {
-    
-  }
+  DXGIVkFormatTable::~DXGIVkFormatTable() = default;
   
   
   DXGI_VK_FORMAT_INFO DXGIVkFormatTable::GetFormatInfo(

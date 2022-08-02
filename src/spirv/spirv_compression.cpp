@@ -81,9 +81,7 @@ namespace dxvk {
   }
 
     
-  SpirvCompressedBuffer::~SpirvCompressedBuffer() {
-
-  }
+  SpirvCompressedBuffer::~SpirvCompressedBuffer() = default;
 
 
   SpirvCodeBuffer SpirvCompressedBuffer::decompress() const {

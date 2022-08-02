@@ -12,9 +12,7 @@ namespace dxvk {
   }
 
   
-  D3D9Initializer::~D3D9Initializer() {
-
-  }
+  D3D9Initializer::~D3D9Initializer() = default;
 
 
   void D3D9Initializer::Flush() {

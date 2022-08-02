@@ -8,9 +8,7 @@ namespace dxvk {
   }
 
 
-  DxgiMonitorInfo::~DxgiMonitorInfo() {
-
-  }
+  DxgiMonitorInfo::~DxgiMonitorInfo() = default;
 
 
   ULONG STDMETHODCALLTYPE DxgiMonitorInfo::AddRef() {

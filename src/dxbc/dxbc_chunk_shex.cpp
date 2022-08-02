@@ -17,8 +17,6 @@ namespace dxvk {
   }
   
   
-  DxbcShex::~DxbcShex() {
-    
-  }
+  DxbcShex::~DxbcShex() = default;
   
 }

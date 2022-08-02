@@ -15,9 +15,7 @@ namespace dxvk {
   }
 
   
-  D3D11Initializer::~D3D11Initializer() {
-
-  }
+  D3D11Initializer::~D3D11Initializer() = default;
 
 
   void D3D11Initializer::Flush() {

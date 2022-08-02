@@ -80,9 +80,7 @@ namespace dxvk {
   }
   
   
-  D3D11Query::~D3D11Query() {
-
-  }
+  D3D11Query::~D3D11Query() = default;
   
     
   HRESULT STDMETHODCALLTYPE D3D11Query::QueryInterface(REFIID  riid, void** ppvObject) {

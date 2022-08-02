@@ -21,9 +21,7 @@ namespace dxvk {
   }
   
   
-  DxbcAnalyzer::~DxbcAnalyzer() {
-    
-  }
+  DxbcAnalyzer::~DxbcAnalyzer() = default;
   
   
   void DxbcAnalyzer::processInstruction(const DxbcShaderInstruction& ins) {

@@ -10,9 +10,7 @@ namespace dxvk {
   }
   
   
-  SpirvModule::~SpirvModule() {
-    
-  }
+  SpirvModule::~SpirvModule() = default;
   
   
   SpirvCodeBuffer SpirvModule::compile() const {

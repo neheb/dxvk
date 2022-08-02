@@ -5,9 +5,7 @@
 
 namespace dxvk::hud {
 
-  HudItem::~HudItem() {
-
-  }
+  HudItem::~HudItem() = default;
 
 
   void HudItem::update(dxvk::high_resolution_clock::time_point time) {
@@ -53,9 +51,7 @@ namespace dxvk::hud {
   }
 
 
-  HudItemSet::~HudItemSet() {
-
-  }
+  HudItemSet::~HudItemSet() = default;
 
 
   void HudItemSet::update() {
@@ -104,9 +100,7 @@ namespace dxvk::hud {
   }
 
 
-  HudClientApiItem::~HudClientApiItem() {
-
-  }
+  HudClientApiItem::~HudClientApiItem() = default;
 
 
   HudPos HudClientApiItem::render(
@@ -139,9 +133,7 @@ namespace dxvk::hud {
   }
 
 
-  HudDeviceInfoItem::~HudDeviceInfoItem() {
-
-  }
+  HudDeviceInfoItem::~HudDeviceInfoItem() = default;
 
 
   HudPos HudDeviceInfoItem::render(
@@ -170,8 +162,8 @@ namespace dxvk::hud {
   }
 
 
-  HudFpsItem::HudFpsItem() { }
-  HudFpsItem::~HudFpsItem() { }
+  HudFpsItem::HudFpsItem() = default;
+  HudFpsItem::~HudFpsItem() = default;
 
 
   void HudFpsItem::update(dxvk::high_resolution_clock::time_point time) {
@@ -209,8 +201,8 @@ namespace dxvk::hud {
   }
 
 
-  HudFrameTimeItem::HudFrameTimeItem() { }
-  HudFrameTimeItem::~HudFrameTimeItem() { }
+  HudFrameTimeItem::HudFrameTimeItem() = default;
+  HudFrameTimeItem::~HudFrameTimeItem() = default;
 
 
   void HudFrameTimeItem::update(dxvk::high_resolution_clock::time_point time) {
@@ -298,9 +290,7 @@ namespace dxvk::hud {
   }
 
 
-  HudSubmissionStatsItem::~HudSubmissionStatsItem() {
-
-  }
+  HudSubmissionStatsItem::~HudSubmissionStatsItem() = default;
 
 
   void HudSubmissionStatsItem::update(dxvk::high_resolution_clock::time_point time) {
@@ -375,9 +365,7 @@ namespace dxvk::hud {
   }
 
 
-  HudDrawCallStatsItem::~HudDrawCallStatsItem() {
-
-  }
+  HudDrawCallStatsItem::~HudDrawCallStatsItem() = default;
 
 
   void HudDrawCallStatsItem::update(dxvk::high_resolution_clock::time_point time) {
@@ -457,9 +445,7 @@ namespace dxvk::hud {
   }
 
 
-  HudPipelineStatsItem::~HudPipelineStatsItem() {
-
-  }
+  HudPipelineStatsItem::~HudPipelineStatsItem() = default;
 
 
   void HudPipelineStatsItem::update(dxvk::high_resolution_clock::time_point time) {
@@ -520,9 +506,7 @@ namespace dxvk::hud {
   }
 
 
-  HudDescriptorStatsItem::~HudDescriptorStatsItem() {
-
-  }
+  HudDescriptorStatsItem::~HudDescriptorStatsItem() = default;
 
 
   void HudDescriptorStatsItem::update(dxvk::high_resolution_clock::time_point time) {
@@ -569,9 +553,7 @@ namespace dxvk::hud {
   }
 
 
-  HudMemoryStatsItem::~HudMemoryStatsItem() {
-
-  }
+  HudMemoryStatsItem::~HudMemoryStatsItem() = default;
 
 
   void HudMemoryStatsItem::update(dxvk::high_resolution_clock::time_point time) {
@@ -618,9 +600,7 @@ namespace dxvk::hud {
   }
 
 
-  HudCsThreadItem::~HudCsThreadItem() {
-
-  }
+  HudCsThreadItem::~HudCsThreadItem() = default;
 
 
   void HudCsThreadItem::update(dxvk::high_resolution_clock::time_point time) {
@@ -697,9 +677,7 @@ namespace dxvk::hud {
   }
 
 
-  HudGpuLoadItem::~HudGpuLoadItem() {
-
-  }
+  HudGpuLoadItem::~HudGpuLoadItem() = default;
 
 
   void HudGpuLoadItem::update(dxvk::high_resolution_clock::time_point time) {
@@ -748,9 +726,7 @@ namespace dxvk::hud {
   }
 
 
-  HudCompilerActivityItem::~HudCompilerActivityItem() {
-
-  }
+  HudCompilerActivityItem::~HudCompilerActivityItem() = default;
 
 
   void HudCompilerActivityItem::update(dxvk::high_resolution_clock::time_point time) {

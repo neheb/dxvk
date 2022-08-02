@@ -32,9 +32,7 @@ namespace dxvk {
   }
   
   
-  D3D11BlendState::~D3D11BlendState() {
-    
-  }
+  D3D11BlendState::~D3D11BlendState() = default;
 
 
   HRESULT STDMETHODCALLTYPE D3D11BlendState::QueryInterface(REFIID riid, void** ppvObject) {

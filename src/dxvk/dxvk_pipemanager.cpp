@@ -174,9 +174,7 @@ namespace dxvk {
   }
   
   
-  DxvkPipelineManager::~DxvkPipelineManager() {
-    
-  }
+  DxvkPipelineManager::~DxvkPipelineManager() = default;
   
   
   DxvkComputePipeline* DxvkPipelineManager::createComputePipeline(

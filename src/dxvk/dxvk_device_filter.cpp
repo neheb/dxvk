@@ -11,9 +11,7 @@ namespace dxvk {
   }
   
   
-  DxvkDeviceFilter::~DxvkDeviceFilter() {
-    
-  }
+  DxvkDeviceFilter::~DxvkDeviceFilter() = default;
   
   
   bool DxvkDeviceFilter::testAdapter(const VkPhysicalDeviceProperties& properties) const {

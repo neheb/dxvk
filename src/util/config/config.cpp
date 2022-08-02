@@ -675,8 +675,8 @@ namespace dxvk {
   }
 
 
-  Config::Config() { }
-  Config::~Config() { }
+  Config::Config() = default;
+  Config::~Config() = default;
 
 
   Config::Config(OptionMap&& options)

@@ -40,9 +40,7 @@ namespace dxvk {
   }
 
   
-  D3D10StateBlock::~D3D10StateBlock() {
-
-  }
+  D3D10StateBlock::~D3D10StateBlock() = default;
 
 
   HRESULT STDMETHODCALLTYPE D3D10StateBlock::QueryInterface(

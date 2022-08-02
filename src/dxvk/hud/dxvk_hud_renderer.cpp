@@ -26,9 +26,7 @@ namespace dxvk::hud {
   }
   
   
-  HudRenderer::~HudRenderer() {
-    
-  }
+  HudRenderer::~HudRenderer() = default;
   
   
   void HudRenderer::beginFrame(const Rc<DxvkContext>& context, VkExtent2D surfaceSize, float scale) {

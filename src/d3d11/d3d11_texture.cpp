@@ -223,9 +223,7 @@ namespace dxvk {
   }
   
   
-  D3D11CommonTexture::~D3D11CommonTexture() {
-    
-  }
+  D3D11CommonTexture::~D3D11CommonTexture() = default;
   
   
   VkDeviceSize D3D11CommonTexture::ComputeMappedOffset(UINT Subresource, UINT Plane, VkOffset3D Offset) const {
@@ -908,9 +906,7 @@ namespace dxvk {
   }
   
   
-  D3D11VkInteropSurface::~D3D11VkInteropSurface() {
-    
-  }
+  D3D11VkInteropSurface::~D3D11VkInteropSurface() = default;
   
   
   ULONG STDMETHODCALLTYPE D3D11VkInteropSurface::AddRef() {
@@ -993,9 +989,7 @@ namespace dxvk {
   }
   
   
-  D3D11Texture1D::~D3D11Texture1D() {
-    
-  }
+  D3D11Texture1D::~D3D11Texture1D() = default;
   
   
   HRESULT STDMETHODCALLTYPE D3D11Texture1D::QueryInterface(REFIID riid, void** ppvObject) {
@@ -1124,9 +1118,7 @@ namespace dxvk {
   }
   
   
-  D3D11Texture2D::~D3D11Texture2D() {
-    
-  }
+  D3D11Texture2D::~D3D11Texture2D() = default;
   
   
   ULONG STDMETHODCALLTYPE D3D11Texture2D::AddRef() {
@@ -1267,9 +1259,7 @@ namespace dxvk {
   }
   
   
-  D3D11Texture3D::~D3D11Texture3D() {
-    
-  }
+  D3D11Texture3D::~D3D11Texture3D() = default;
   
   
   HRESULT STDMETHODCALLTYPE D3D11Texture3D::QueryInterface(REFIID riid, void** ppvObject) {

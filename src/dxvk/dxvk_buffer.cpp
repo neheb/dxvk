@@ -220,8 +220,8 @@ namespace dxvk {
   }
   
   
-  DxvkBufferTracker:: DxvkBufferTracker() { }
-  DxvkBufferTracker::~DxvkBufferTracker() { }
+  DxvkBufferTracker:: DxvkBufferTracker() = default;
+  DxvkBufferTracker::~DxvkBufferTracker() = default;
   
   
   void DxvkBufferTracker::reset() {

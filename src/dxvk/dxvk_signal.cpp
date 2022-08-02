@@ -2,14 +2,10 @@
 
 namespace dxvk {
   
-  DxvkSignalTracker::DxvkSignalTracker() {
-
-  }
+  DxvkSignalTracker::DxvkSignalTracker() = default;
 
 
-  DxvkSignalTracker::~DxvkSignalTracker() {
-
-  }
+  DxvkSignalTracker::~DxvkSignalTracker() = default;
     
   
   void DxvkSignalTracker::add(const Rc<sync::Signal>& signal, uint64_t value) {

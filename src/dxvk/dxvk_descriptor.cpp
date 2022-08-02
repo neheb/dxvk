@@ -3,14 +3,10 @@
 
 namespace dxvk {
 
-  DxvkDescriptorSetList::DxvkDescriptorSetList() {
-
-  }
+  DxvkDescriptorSetList::DxvkDescriptorSetList() = default;
 
 
-  DxvkDescriptorSetList::~DxvkDescriptorSetList() {
-
-  }
+  DxvkDescriptorSetList::~DxvkDescriptorSetList() = default;
 
 
   VkDescriptorSet DxvkDescriptorSetList::alloc() {

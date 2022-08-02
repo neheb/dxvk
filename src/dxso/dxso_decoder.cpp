@@ -46,7 +46,7 @@ namespace dxvk {
       switch (opcode) {
         case DxsoOpcode::TexCoord:
         case DxsoOpcode::Tex: length += 1;
-        default: break;
+        break; default: break;
       }
     }
 

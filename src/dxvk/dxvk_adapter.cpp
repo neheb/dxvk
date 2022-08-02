@@ -22,9 +22,7 @@ namespace dxvk {
   }
   
   
-  DxvkAdapter::~DxvkAdapter() {
-    
-  }
+  DxvkAdapter::~DxvkAdapter() = default;
   
   
   DxvkAdapterMemoryInfo DxvkAdapter::getMemoryHeapInfo() const {

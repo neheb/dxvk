@@ -18,9 +18,9 @@ namespace dxvk {
   WineXrFunctions g_winexrFunctions;
   DxvkXrProvider DxvkXrProvider::s_instance;
 
-  DxvkXrProvider:: DxvkXrProvider() { }
+  DxvkXrProvider:: DxvkXrProvider() = default;
 
-  DxvkXrProvider::~DxvkXrProvider() { }
+  DxvkXrProvider::~DxvkXrProvider() = default;
 
 
   std::string_view DxvkXrProvider::getName() {

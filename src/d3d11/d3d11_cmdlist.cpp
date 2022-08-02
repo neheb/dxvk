@@ -12,9 +12,7 @@ namespace dxvk {
     m_contextFlags(ContextFlags) { }
   
   
-  D3D11CommandList::~D3D11CommandList() {
-    
-  }
+  D3D11CommandList::~D3D11CommandList() = default;
   
   
   HRESULT STDMETHODCALLTYPE D3D11CommandList::QueryInterface(REFIID riid, void** ppvObject) {

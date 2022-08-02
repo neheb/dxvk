@@ -15,7 +15,7 @@ namespace dxvk {
   }
   
   
-  Logger::~Logger() { }
+  Logger::~Logger() = default;
   
   
   void Logger::trace(const std::string& message) {

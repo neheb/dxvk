@@ -14,9 +14,7 @@ namespace dxvk {
   }
   
   
-  DxgiFactory::~DxgiFactory() {
-    
-  }
+  DxgiFactory::~DxgiFactory() = default;
   
   
   HRESULT STDMETHODCALLTYPE DxgiFactory::QueryInterface(REFIID riid, void** ppvObject) {

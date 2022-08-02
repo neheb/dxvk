@@ -13,9 +13,7 @@ namespace dxvk {
   }
 
 
-  D3D11DXGIResource::~D3D11DXGIResource() {
-
-  }
+  D3D11DXGIResource::~D3D11DXGIResource() = default;
 
 
   ULONG STDMETHODCALLTYPE D3D11DXGIResource::AddRef() {

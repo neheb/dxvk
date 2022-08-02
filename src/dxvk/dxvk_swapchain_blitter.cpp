@@ -15,9 +15,7 @@ namespace dxvk {
   }
 
 
-  DxvkSwapchainBlitter::~DxvkSwapchainBlitter() {
-    
-  }
+  DxvkSwapchainBlitter::~DxvkSwapchainBlitter() = default;
 
 
   void DxvkSwapchainBlitter::presentImage(

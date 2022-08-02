@@ -6,7 +6,7 @@
 
 namespace dxvk {
 
-  D3D9CommonShader::D3D9CommonShader() {}
+  D3D9CommonShader::D3D9CommonShader() = default;
 
   D3D9CommonShader::D3D9CommonShader(
             D3D9DeviceEx*         pDevice,

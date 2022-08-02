@@ -39,9 +39,7 @@ namespace dxvk {
   }
   
   
-  DxgiOutput::~DxgiOutput() {
-    
-  }
+  DxgiOutput::~DxgiOutput() = default;
   
   
   HRESULT STDMETHODCALLTYPE DxgiOutput::QueryInterface(REFIID riid, void** ppvObject) {

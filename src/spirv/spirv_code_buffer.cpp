@@ -5,8 +5,8 @@
 
 namespace dxvk {
   
-  SpirvCodeBuffer:: SpirvCodeBuffer() { }
-  SpirvCodeBuffer::~SpirvCodeBuffer() { }
+  SpirvCodeBuffer:: SpirvCodeBuffer() = default;
+  SpirvCodeBuffer::~SpirvCodeBuffer() = default;
   
   
   SpirvCodeBuffer::SpirvCodeBuffer(uint32_t size)

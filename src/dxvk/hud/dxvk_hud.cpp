@@ -50,9 +50,7 @@ namespace dxvk::hud {
   }
   
   
-  Hud::~Hud() {
-    
-  }
+  Hud::~Hud() = default;
   
   
   void Hud::update() {

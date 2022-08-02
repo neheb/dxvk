@@ -29,8 +29,8 @@ namespace dxvk::vk {
   }
   
   
-  LibraryFn::LibraryFn() { }
-  LibraryFn::~LibraryFn() { }
+  LibraryFn::LibraryFn() = default;
+  LibraryFn::~LibraryFn() = default;
   
   
   InstanceFn::InstanceFn(bool owned, VkInstance instance)
