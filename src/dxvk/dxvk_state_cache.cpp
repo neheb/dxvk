@@ -131,13 +131,13 @@ namespace dxvk {
       data.depth.format = VkFormat(imageFormat);
       data.depth.layout = unpackImageLayoutV11(imageLayout);
 
-      for (uint32_t i = 0; i < MaxNumRenderTargets; i++) {
+      for (auto &image : data.color) {
         if (!read(imageFormat)
          || !read(imageLayout))
           return false;
 
-        data.color[i].format = VkFormat(imageFormat);
-        data.color[i].layout = unpackImageLayoutV11(imageLayout);
+        image.format = VkFormat(imageFormat);
+        image.layout = unpackImageLayoutV11(imageLayout);
       }
 
       return true;
@@ -608,14 +608,14 @@ namespace dxvk {
         return false;
 
       // Read render target swizzles
-      for (uint32_t i = 0; i < MaxNumRenderTargets; i++) {
-        if (!data.read(entry.gpState.omSwizzle[i], version))
+      for (auto &info : entry.gpState.omSwizzle) {
+        if (!data.read(info, version))
           return false;
       }
 
       // Read render target blend info
-      for (uint32_t i = 0; i < MaxNumRenderTargets; i++) {
-        if (!data.read(entry.gpState.omBlend[i], version))
+      for (auto &info : entry.gpState.omBlend) {
+        if (!data.read(info, version))
           return false;
       }
 
@@ -682,11 +682,11 @@ namespace dxvk {
       data.write(entry.gpState.dsBack);
 
       // Write out render target swizzles and blend info
-      for (uint32_t i = 0; i < MaxNumRenderTargets; i++)
-        data.write(entry.gpState.omSwizzle[i]);
+      for (auto &info : entry.gpState.omSwizzle)
+        data.write(info);
 
-      for (uint32_t i = 0; i < MaxNumRenderTargets; i++)
-        data.write(entry.gpState.omBlend[i]);
+      for (auto &info : entry.gpState.omBlend)
+        data.write(info);
 
       // Write out input layout for defined attributes
       for (uint32_t i = 0; i < entry.gpState.il.attributeCount(); i++)

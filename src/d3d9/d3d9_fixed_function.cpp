@@ -330,8 +330,7 @@ namespace dxvk {
     uint32_t isSprite   = spvModule.opIEqual(boolType, spriteBit, spvModule.constu32(1));
 
     std::array<uint32_t, 4> isSpriteIndices;
-    for (uint32_t i = 0; i < isSpriteIndices.size(); i++)
-      isSpriteIndices[i] = isSprite;
+    isSpriteIndices.fill(isSprite);
 
     isSprite = spvModule.opCompositeConstruct(boolVec4, isSpriteIndices.size(), isSpriteIndices.data());
 
@@ -2398,9 +2397,9 @@ namespace dxvk {
 
     std::hash<uint32_t> uint32hash;
 
-    for (uint32_t i = 0; i < caps::TextureStageCount; i++) {
-      for (uint32_t j = 0; j < std::size(key.Stages[i].Primitive); j++)
-        state.add(uint32hash(key.Stages[i].Primitive[j]));
+    for (auto Stage : key.Stages) {
+      for (uint32_t j = 0; j < std::size(Stage.Primitive); j++)
+        state.add(uint32hash(Stage.Primitive[j]));
     }
 
     return state;

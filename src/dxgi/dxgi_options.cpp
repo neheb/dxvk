@@ -10,15 +10,15 @@ namespace dxvk {
     
     int32_t id = 0;
 
-    for (size_t i = 0; i < str.size(); i++) {
+    for (char c : str) {
       id *= 16;
 
-      if (str[i] >= '0' && str[i] <= '9')
-        id += str[i] - '0';
-      else if (str[i] >= 'A' && str[i] <= 'F')
-        id += str[i] - 'A' + 10;
-      else if (str[i] >= 'a' && str[i] <= 'f')
-        id += str[i] - 'a' + 10;
+      if (c >= '0' && c <= '9')
+        id += c - '0';
+      else if (c >= 'A' && c <= 'F')
+        id += c - 'A' + 10;
+      else if (c >= 'a' && c <= 'f')
+        id += c - 'a' + 10;
       else
         return -1;
     }

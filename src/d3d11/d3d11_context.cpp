@@ -225,8 +225,8 @@ namespace dxvk {
     m_state.om.cbState = nullptr;
     m_state.om.dsState = nullptr;
     
-    for (uint32_t i = 0; i < 4; i++)
-      m_state.om.blendFactor[i] = 1.0f;
+    for (float &factor : m_state.om.blendFactor)
+      factor = 1.0f;
     
     m_state.om.sampleCount = 0;
     m_state.om.sampleMask = D3D11_DEFAULT_SAMPLE_MASK;

@@ -694,16 +694,16 @@ namespace dxvk {
       // Check if there are any semantics defined in the
       // shader that are not included in the current input
       // layout.
-      for (auto i = inputSignature->begin(); i != inputSignature->end(); i++) {
-        bool found = i->systemValue != DxbcSystemValue::None;
+      for (const auto &input : *inputSignature) {
+        bool found = input.systemValue != DxbcSystemValue::None;
         
         for (uint32_t j = 0; j < attrCount && !found; j++)
-          found = attrList.at(j).location == i->registerId;
+          found = attrList.at(j).location == input.registerId;
         
         if (!found) {
           Logger::warn(str::format(
             "D3D11Device: Vertex input '",
-            i->semanticName, i->semanticIndex,
+            input.semanticName, input.semanticIndex,
             "' not defined by input layout"));
         }
       }

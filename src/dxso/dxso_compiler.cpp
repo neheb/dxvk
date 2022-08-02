@@ -42,25 +42,20 @@ namespace dxvk {
     m_usedSamplers = 0;
     m_usedRTs      = 0;
 
-    for (uint32_t i = 0; i < m_rRegs.size(); i++)
-      m_rRegs.at(i)  = DxsoRegisterPointer{ };
+    for (auto &m_rReg : m_rRegs)
+      m_rReg  = DxsoRegisterPointer{ };
 
-    for (uint32_t i = 0; i < m_cFloat.size(); i++)
-      m_cFloat.at(i) = 0;
-
-    for (uint32_t i = 0; i < m_cInt.size(); i++)
-      m_cInt.at(i)   = 0;
-
-    for (uint32_t i = 0; i < m_cBool.size(); i++)
-      m_cBool.at(i)  = 0;
+    m_cFloat.fill(0);
+    m_cInt.fill(0);
+    m_cBool.fill(0);
 
     m_vs.addr        = DxsoRegisterPointer{ };
     m_vs.oPos        = DxsoRegisterPointer{ };
     m_fog            = DxsoRegisterPointer{ };
     m_vs.oPSize      = DxsoRegisterPointer{ };
 
-    for (uint32_t i = 0; i < m_ps.oColor.size(); i++)
-      m_ps.oColor.at(i) = DxsoRegisterPointer{ };
+    for (auto & i : m_ps.oColor)
+      i = DxsoRegisterPointer{ };
     m_ps.oDepth      = DxsoRegisterPointer{ };
     m_ps.vFace       = DxsoRegisterPointer{ };
     m_ps.vPos        = DxsoRegisterPointer{ };

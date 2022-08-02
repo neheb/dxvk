@@ -582,8 +582,8 @@ namespace dxvk {
   
   
   void DxvkAdapter::initHeapAllocInfo() {
-    for (uint32_t i = 0; i < m_heapAlloc.size(); i++)
-      m_heapAlloc[i] = 0;
+    for (auto &info : m_heapAlloc)
+      info = 0;
   }
 
 

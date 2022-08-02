@@ -137,9 +137,9 @@ namespace dxvk {
   size_t DxvkBindingSetLayoutKey::hash() const {
     DxvkHashState hash;
 
-    for (size_t i = 0; i < m_bindings.size(); i++) {
-      hash.add(m_bindings[i].descriptorType);
-      hash.add(m_bindings[i].stages);
+    for (auto m_binding : m_bindings) {
+      hash.add(m_binding.descriptorType);
+      hash.add(m_binding.stages);
     }
 
     return hash;
@@ -272,8 +272,8 @@ namespace dxvk {
     DxvkHashState hash;
     hash.add(m_stages);
 
-    for (uint32_t i = 0; i < m_bindings.size(); i++)
-      hash.add(m_bindings[i].hash());
+    for (const auto &m_binding : m_bindings)
+      hash.add(m_binding.hash());
 
     hash.add(m_pushConst.stageFlags);
     hash.add(m_pushConst.offset);

@@ -207,15 +207,15 @@ namespace dxvk::vk {
     // Create one set of semaphores per swap image
     m_semaphores.resize(m_info.imageCount);
 
-    for (uint32_t i = 0; i < m_semaphores.size(); i++) {
+    for (auto &m_semaphore : m_semaphores) {
       VkSemaphoreCreateInfo semInfo = { VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO };
 
       if ((status = m_vkd->vkCreateSemaphore(m_vkd->device(),
-          &semInfo, nullptr, &m_semaphores[i].acquire)) != VK_SUCCESS)
+          &semInfo, nullptr, &m_semaphore.acquire)) != VK_SUCCESS)
         return status;
 
       if ((status = m_vkd->vkCreateSemaphore(m_vkd->device(),
-          &semInfo, nullptr, &m_semaphores[i].present)) != VK_SUCCESS)
+          &semInfo, nullptr, &m_semaphore.present)) != VK_SUCCESS)
         return status;
     }
     

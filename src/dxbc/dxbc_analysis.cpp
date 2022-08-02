@@ -92,12 +92,12 @@ namespace dxvk {
     DxbcClipCullInfo result;
     
     if (sgn != nullptr) {
-      for (auto e = sgn->begin(); e != sgn->end(); e++) {
-        const uint32_t componentCount = e->componentMask.popCount();
+      for (const auto &e : *sgn) {
+        const uint32_t componentCount = e.componentMask.popCount();
         
-        if (e->systemValue == DxbcSystemValue::ClipDistance)
+        if (e.systemValue == DxbcSystemValue::ClipDistance)
           result.numClipPlanes += componentCount;
-        if (e->systemValue == DxbcSystemValue::CullDistance)
+        if (e.systemValue == DxbcSystemValue::CullDistance)
           result.numCullPlanes += componentCount;
       }
     }

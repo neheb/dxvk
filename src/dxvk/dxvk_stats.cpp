@@ -25,8 +25,8 @@ namespace dxvk {
   
   
   void DxvkStatCounters::reset() {
-    for (size_t i = 0; i < m_counters.size(); i++)
-      m_counters[i] = 0;
+    for (auto &m_counter : m_counters)
+      m_counter = 0;
   }
   
 }

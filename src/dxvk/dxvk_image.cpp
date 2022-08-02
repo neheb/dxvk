@@ -221,8 +221,7 @@ namespace dxvk {
     const Rc<DxvkImage>&            image,
     const DxvkImageViewCreateInfo&  info)
   : m_vkd(vkd), m_image(image), m_info(info), m_cookie(++s_cookie) {
-    for (uint32_t i = 0; i < ViewCount; i++)
-      m_views[i] = VK_NULL_HANDLE;
+    std::fill(std::begin(m_views), std::end(m_views), VK_NULL_HANDLE);
     
     switch (m_info.type) {
       case VK_IMAGE_VIEW_TYPE_1D:
@@ -266,8 +265,8 @@ namespace dxvk {
   
   
   DxvkImageView::~DxvkImageView() {
-    for (uint32_t i = 0; i < ViewCount; i++)
-      m_vkd->vkDestroyImageView(m_vkd->device(), m_views[i], nullptr);
+    for (auto &m_view : m_views)
+      m_vkd->vkDestroyImageView(m_vkd->device(), m_view, nullptr);
   }
 
   

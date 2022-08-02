@@ -30,11 +30,11 @@ namespace dxvk {
     hash.add(uint32_t(fsDualSrcBlend));
     hash.add(undefinedInputs);
 
-    for (uint32_t i = 0; i < rtSwizzles.size(); i++) {
-      hash.add(rtSwizzles[i].r);
-      hash.add(rtSwizzles[i].g);
-      hash.add(rtSwizzles[i].b);
-      hash.add(rtSwizzles[i].a);
+    for (auto rtSwizzle : rtSwizzles) {
+      hash.add(rtSwizzle.r);
+      hash.add(rtSwizzle.g);
+      hash.add(rtSwizzle.b);
+      hash.add(rtSwizzle.a);
     }
 
     return hash;

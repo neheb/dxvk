@@ -318,9 +318,9 @@ namespace dxvk {
     reg.modifiers       = 0;
     reg.idxDim          = 0;
     
-    for (uint32_t i = 0; i < DxbcMaxRegIndexDim; i++) {
-      reg.idx[i].relReg = nullptr;
-      reg.idx[i].offset = 0;
+    for (auto &idx : reg.idx) {
+      idx.relReg = nullptr;
+      idx.offset = 0;
     }
     
     this->decodeComponentSelection(reg, token);

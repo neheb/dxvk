@@ -1043,8 +1043,8 @@ namespace dxvk {
     desc.IsBackBuffer       = TRUE;
     desc.IsAttachmentOnly   = FALSE;
 
-    for (uint32_t i = 0; i < m_backBuffers.size(); i++)
-      m_backBuffers[i] = new D3D9Surface(m_parent, &desc, this, nullptr);
+    for (auto &m_backBuffer : m_backBuffers)
+      m_backBuffer = new D3D9Surface(m_parent, &desc, this, nullptr);
 
     auto swapImage = m_backBuffers[0]->GetCommonTexture()->GetImage();
 
@@ -1060,9 +1060,9 @@ namespace dxvk {
     m_context->beginRecording(
       m_device->createCommandList());
     
-    for (uint32_t i = 0; i < m_backBuffers.size(); i++) {
+    for (auto &m_backBuffer : m_backBuffers) {
       m_context->initImage(
-        m_backBuffers[i]->GetCommonTexture()->GetImage(),
+        m_backBuffer->GetCommonTexture()->GetImage(),
         subresources, VK_IMAGE_LAYOUT_UNDEFINED);
     }
 

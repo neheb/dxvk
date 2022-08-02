@@ -200,17 +200,17 @@ namespace dxvk {
     m_module.setOutputVertices(m_entryPointId, 1);
     m_module.setInvocations   (m_entryPointId, 1);
 
-    for (auto e = m_isgn->begin(); e != m_isgn->end(); e++) {
-      emitDclInput(e->registerId, 1,
-        e->componentMask, DxbcSystemValue::None,
+    for (const auto &e : *m_isgn) {
+      emitDclInput(e.registerId, 1,
+        e.componentMask, DxbcSystemValue::None,
         DxbcInterpolationMode::Undefined);
     }
 
     // Figure out which streams to enable
     uint32_t streamMask = 0;
 
-    for (size_t i = 0; i < m_xfbVars.size(); i++)
-      streamMask |= 1u << m_xfbVars[i].streamId;
+    for (auto &m_xfbVar : m_xfbVars)
+      streamMask |= 1u << m_xfbVar.streamId;
     
     for (uint32_t streamId : bit::BitMask(streamMask)) {
       emitXfbOutputSetup(streamId, true);
@@ -5808,8 +5808,8 @@ namespace dxvk {
   void DxbcCompiler::emitInitWorkgroupMemory() {
     bool hasTgsm = false;
 
-    for (uint32_t i = 0; i < m_gRegs.size(); i++) {
-      if (!m_gRegs[i].varId)
+    for (auto &m_gReg : m_gRegs) {
+      if (!m_gReg.varId)
         continue;
       
       if (!m_cs.builtinLocalInvocationIndex) {
@@ -5824,9 +5824,9 @@ namespace dxvk {
       uint32_t ptrTypeId = m_module.defPointerType(
         intTypeId, spv::StorageClassWorkgroup);
 
-      uint32_t numElements = m_gRegs[i].type == DxbcResourceType::Structured
-        ? m_gRegs[i].elementCount * m_gRegs[i].elementStride / 4
-        : m_gRegs[i].elementCount / 4;
+      uint32_t numElements = m_gReg.type == DxbcResourceType::Structured
+        ? m_gReg.elementCount * m_gReg.elementStride / 4
+        : m_gReg.elementCount / 4;
       
       uint32_t numThreads = m_cs.workgroupSizeX *
         m_cs.workgroupSizeY * m_cs.workgroupSizeZ;
@@ -5846,7 +5846,7 @@ namespace dxvk {
           m_module.constu32(e));
         
         uint32_t ptrId = m_module.opAccessChain(
-          ptrTypeId, m_gRegs[i].varId, 1, &ofsId);
+          ptrTypeId, m_gReg.varId, 1, &ofsId);
 
         m_module.opStore(ptrId, zeroId);
       }
@@ -5870,7 +5870,7 @@ namespace dxvk {
           threadId);
         
         uint32_t ptrId = m_module.opAccessChain(
-          ptrTypeId, m_gRegs[i].varId, 1, &ofsId);
+          ptrTypeId, m_gReg.varId, 1, &ofsId);
         
         m_module.opStore(ptrId, zeroId);
 
@@ -6344,13 +6344,13 @@ namespace dxvk {
     if (dstArray == 0)
       return;
     
-    for (auto e = m_osgn->begin(); e != m_osgn->end(); e++) {
-      if (e->systemValue == sv) {
-        DxbcRegisterPointer srcPtr = m_oRegs.at(e->registerId);
+    for (const auto &e : *m_osgn) {
+      if (e.systemValue == sv) {
+        DxbcRegisterPointer srcPtr = m_oRegs.at(e.registerId);
         DxbcRegisterValue srcValue = emitValueLoad(srcPtr);
         
         for (uint32_t i = 0; i < 4; i++) {
-          if (e->componentMask[i]) {
+          if (e.componentMask[i]) {
             uint32_t offsetId = m_module.consti32(offset++);
             
             DxbcRegisterValue component = emitRegisterExtract(
@@ -6381,14 +6381,14 @@ namespace dxvk {
     if (srcArray == 0)
       return;
     
-    for (auto e = m_isgn->begin(); e != m_isgn->end(); e++) {
-      if (e->systemValue == sv) {
+    for (const auto &e : *m_isgn) {
+      if (e.systemValue == sv) {
         // Load individual components from the source array
         uint32_t                componentIndex = 0;
         std::array<uint32_t, 4> componentIds   = {{ 0, 0, 0, 0 }};
         
         for (uint32_t i = 0; i < 4; i++) {
-          if (e->componentMask[i]) {
+          if (e.componentMask[i]) {
             uint32_t offsetId = m_module.consti32(offset++);
             
             DxbcRegisterPointer srcPtr;
@@ -6416,7 +6416,7 @@ namespace dxvk {
         }
         
         // Store vector to the input array
-        uint32_t registerId = m_module.consti32(e->registerId);
+        uint32_t registerId = m_module.consti32(e.registerId);
         
         DxbcRegisterPointer dstInput;
         dstInput.type = { DxbcScalarType::Float32, 4 };
@@ -6426,7 +6426,7 @@ namespace dxvk {
             spv::StorageClassPrivate),
           m_vArray, 1, &registerId);
         
-        emitValueStore(dstInput, dstValue, e->componentMask);
+        emitValueStore(dstInput, dstValue, e.componentMask);
       }
     }
   }
@@ -6905,8 +6905,8 @@ namespace dxvk {
       m_xfbVars[i].component = 0;
     }
 
-    for (uint32_t i = 0; i < m_xfbVars.size(); i++) {
-      const DxbcXfbVar* var = &m_xfbVars[i];
+    for (auto &m_xfbVar : m_xfbVars) {
+      const DxbcXfbVar* var = &m_xfbVar;
 
       m_module.decorateLocation (var->varId, var->location);
       m_module.decorateComponent(var->varId, var->component);
@@ -6917,11 +6917,11 @@ namespace dxvk {
   void DxbcCompiler::emitXfbOutputSetup(
           uint32_t                          streamId,
           bool                              passthrough) {
-    for (size_t i = 0; i < m_xfbVars.size(); i++) {
-      if (m_xfbVars[i].streamId == streamId) {
+    for (auto &m_xfbVar : m_xfbVars) {
+      if (m_xfbVar.streamId == streamId) {
         DxbcRegisterPointer srcPtr = passthrough
-          ? m_vRegs[m_xfbVars[i].outputId]
-          : m_oRegs[m_xfbVars[i].outputId];
+          ? m_vRegs[m_xfbVar.outputId]
+          : m_oRegs[m_xfbVar.outputId];
 
         if (passthrough) {
           srcPtr = emitArrayAccess(srcPtr,
@@ -6931,12 +6931,12 @@ namespace dxvk {
         
         DxbcRegisterPointer dstPtr;
         dstPtr.type.ctype  = DxbcScalarType::Float32;
-        dstPtr.type.ccount = m_xfbVars[i].dstMask.popCount();
-        dstPtr.id = m_xfbVars[i].varId;
+        dstPtr.type.ccount = m_xfbVar.dstMask.popCount();
+        dstPtr.id = m_xfbVar.varId;
 
         DxbcRegisterValue value = emitRegisterExtract(
-          emitValueLoad(srcPtr), m_xfbVars[i].srcMask);
-        emitValueStore(dstPtr, value, m_xfbVars[i].dstMask);
+          emitValueLoad(srcPtr), m_xfbVar.srcMask);
+        emitValueStore(dstPtr, value, m_xfbVar.dstMask);
       }
     }
   }
@@ -7073,22 +7073,22 @@ namespace dxvk {
       getScalarTypeId(DxbcScalarType::Uint32),
       m_hs.builtinInvocationId);
     
-    for (auto i = m_isgn->begin(); i != m_isgn->end(); i++) {
+    for (const auto &i : *m_isgn) {
       this->emitDclInput(
-        i->registerId, m_hs.vertexCountIn,
-        i->componentMask,
+        i.registerId, m_hs.vertexCountIn,
+        i.componentMask,
         DxbcSystemValue::None,
         DxbcInterpolationMode::Undefined);
       
       // Vector type index
       const std::array<uint32_t, 2> dstIndices
-        = {{ invocationId, m_module.constu32(i->registerId) }};
+        = {{ invocationId, m_module.constu32(i.registerId) }};
       
       DxbcRegisterPointer srcPtr;
-      srcPtr.type = m_vRegs.at(i->registerId).type;
+      srcPtr.type = m_vRegs.at(i.registerId).type;
       srcPtr.id = m_module.opAccessChain(
         m_module.defPointerType(getVectorTypeId(srcPtr.type), spv::StorageClassInput),
-        m_vRegs.at(i->registerId).id, 1, &invocationId);
+        m_vRegs.at(i.registerId).id, 1, &invocationId);
       
       DxbcRegisterValue srcValue = emitRegisterBitcast(
         emitValueLoad(srcPtr), DxbcScalarType::Float32);

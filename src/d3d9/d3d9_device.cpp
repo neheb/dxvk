@@ -7088,8 +7088,8 @@ namespace dxvk {
     for (uint32_t i = 0; i < caps::MaxStreams; i++)
       m_state.streamFreq[i] = 1;
 
-    for (uint32_t i = 0; i < m_state.textures.size(); i++)
-      TextureChangePrivate(m_state.textures[i], nullptr);
+    for (auto &texture : m_state.textures)
+      TextureChangePrivate(texture, nullptr);
 
     EmitCs([
       cSize = m_state.textures.size()

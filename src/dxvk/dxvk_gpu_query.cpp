@@ -315,9 +315,9 @@ namespace dxvk {
           VkQueryType           type) {
     m_activeTypes |= getQueryTypeBit(type);
 
-    for (size_t i = 0; i < m_activeQueries.size(); i++) {
-      if (m_activeQueries[i]->type() == type)
-        beginSingleQuery(cmd, m_activeQueries[i]);
+    for (auto &m_activeQuery : m_activeQueries) {
+      if (m_activeQuery->type() == type)
+        beginSingleQuery(cmd, m_activeQuery);
     }
   }
 
@@ -327,9 +327,9 @@ namespace dxvk {
           VkQueryType           type) {
     m_activeTypes &= ~getQueryTypeBit(type);
 
-    for (size_t i = 0; i < m_activeQueries.size(); i++) {
-      if (m_activeQueries[i]->type() == type)
-        endSingleQuery(cmd, m_activeQueries[i]);
+    for (auto &m_activeQuery : m_activeQueries) {
+      if (m_activeQuery->type() == type)
+        endSingleQuery(cmd, m_activeQuery);
     }
   }
 

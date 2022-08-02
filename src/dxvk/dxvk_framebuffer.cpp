@@ -98,9 +98,9 @@ namespace dxvk {
       minSize.layers = std::min(minSize.layers, depthSize.layers);
     }
 
-    for (uint32_t i = 0; i < MaxNumRenderTargets; i++) {
-      if (m_renderTargets.color[i].view != nullptr) {
-        DxvkFramebufferSize colorSize = this->computeRenderTargetSize(m_renderTargets.color[i].view);
+    for (const auto &color : m_renderTargets.color) {
+      if (color.view != nullptr) {
+        DxvkFramebufferSize colorSize = this->computeRenderTargetSize(color.view);
         minSize.width  = std::min(minSize.width,  colorSize.width);
         minSize.height = std::min(minSize.height, colorSize.height);
         minSize.layers = std::min(minSize.layers, colorSize.layers);

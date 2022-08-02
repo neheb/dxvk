@@ -95,8 +95,8 @@ namespace dxvk {
     hash.add(fhash(desc.MipLODBias));
     hash.add(desc.MaxAnisotropy);
     hash.add(desc.ComparisonFunc);
-    for (uint32_t i = 0; i < 4; i++)
-      hash.add(fhash(desc.BorderColor[i]));
+    for (float color : desc.BorderColor)
+      hash.add(fhash(color));
     hash.add(fhash(desc.MinLOD));
     hash.add(fhash(desc.MaxLOD));
     return hash;
